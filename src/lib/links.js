@@ -1,10 +1,9 @@
-import { AVATAR_SRC } from './avatarSrc'
 /** Easy-to-edit link-in-bio config for Leyla / NEXUS//OS */
 export const PROFILE = {
   displayName: 'Leyla',
   label: 'NEXUS//OS',
   bio: 'Confident, warm, assertive modular AI assistant. Calm, precise, minimal.',
-  avatar: AVATAR_SRC,
+  avatar: '/avatar.jpg',
 }
 
 export const FEATURED_LINKS = [

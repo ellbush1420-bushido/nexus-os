@@ -51,3 +51,12 @@ body {
     linear-gradient(90deg, rgba(217, 70, 239, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+.basilisk-grid {
+  background-color: #050208;
+  background-image:
+    linear-gradient(rgba(217, 70, 239, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 63, 94, 0.04) 1px, transparent 1px),
+    radial-gradient(ellipse at top, rgba(88, 28, 135, 0.35), transparent 55%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+}

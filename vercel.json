@@ -1,7 +1,6 @@
 {
   "rewrites": [
     { "source": "/dashboard", "destination": "/index.html" },
-    { "source": "/basilisk", "destination": "/index.html" },
     { "source": "/qr", "destination": "/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]

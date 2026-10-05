@@ -3,11 +3,6 @@
   publish = "dist"
 
 [[redirects]]
-  from = "/basilisk"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
   from = "/dashboard"
   to = "/index.html"
   status = 200

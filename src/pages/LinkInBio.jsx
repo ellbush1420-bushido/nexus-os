@@ -27,15 +27,29 @@ export default function LinkInBio() {
 
         <ul className="list-none w-full mt-7 flex flex-col gap-3 p-0 m-0">
           {FEATURED_LINKS.map((item) => {
+            const isPrivate = item.private || item.concept
             const className = item.featured
               ? 'block px-[18px] py-[15px] rounded-[14px] font-semibold no-underline text-white bg-gradient-to-br from-[var(--accent)] to-[var(--accent2)] border-none transition-transform hover:-translate-y-0.5 hover:shadow-[0_8px_24px_-10px_var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none motion-reduce:hover:transform-none'
-              : 'block px-[18px] py-[15px] rounded-[14px] font-semibold no-underline text-[var(--text)] bg-[var(--card)] border border-[var(--border)] transition-transform hover:-translate-y-0.5 hover:border-[var(--accent)] hover:shadow-[0_8px_24px_-10px_var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none motion-reduce:hover:transform-none'
+              : isPrivate
+                ? 'block px-[18px] py-[15px] rounded-[14px] font-semibold no-underline text-fuchsia-100 bg-gradient-to-br from-violet-950 to-rose-950 border border-fuchsia-500/40 transition-transform hover:-translate-y-0.5 hover:border-fuchsia-400 hover:shadow-[0_8px_24px_-10px_rgba(217,70,239,0.5)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-fuchsia-400 motion-reduce:transition-none motion-reduce:hover:transform-none'
+                : 'block px-[18px] py-[15px] rounded-[14px] font-semibold no-underline text-[var(--text)] bg-[var(--card)] border border-[var(--border)] transition-transform hover:-translate-y-0.5 hover:border-[var(--accent)] hover:shadow-[0_8px_24px_-10px_var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)] motion-reduce:transition-none motion-reduce:hover:transform-none'
+
+            const inner = (
+              <>
+                <span className="block">{item.label}</span>
+                {isPrivate ? (
+                  <span className="mt-1 block text-[10px] tracking-[0.18em] uppercase text-fuchsia-300/90 font-medium">
+                    PRIVATE · CONCEPT
+                  </span>
+                ) : null}
+              </>
+            )
 
             if (item.href.startsWith('/')) {
               return (
                 <li key={item.id}>
                   <Link to={item.href} className={className}>
-                    {item.label}
+                    {inner}
                   </Link>
                 </li>
               )
@@ -43,7 +57,7 @@ export default function LinkInBio() {
             return (
               <li key={item.id}>
                 <a href={item.href} className={className}>
-                  {item.label}
+                  {inner}
                 </a>
               </li>
             )
